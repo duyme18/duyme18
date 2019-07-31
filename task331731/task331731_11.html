@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Baì 11</title>
+</head>
+<body>
+<script>
+    let luong = parseInt(prompt("Nhập số tiền lương của bạn! (triệu VND)"))
+    let luongthuclinh
+    if (luong >= 9) {
+        luongthuclinh = luong - (luong * 5) / 100
+        alert("Tiền Lương sau khi trừ thuế= " + luongthuclinh + " triệu VND")
+    } else if (luong >= 15) {
+        luongthuclinh = luong - (luong * 10) / 100
+        alert("Tiền Lương sau khi trừ thuế= " + luongthuclinh + " triệu VND")
+    } else if (luong > 30) {
+        luongthuclinh = luong - (luong * 20) / 100
+        alert("Tiền Lương sau khi trừ thuế= " + luongthuclinh + " triệu VND")
+    } else {
+        luongthuclinh = luong - (luong * 25) / 100
+        alert("Tiền Lương sau khi trừ thuế= " + luongthuclinh + " triệu VND")
+    }
+</script>
+</body>
+</html>

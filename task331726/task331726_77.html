@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BÀI 7</title>
+</head>
+<body>
+<script>
+    let sodien = parseInt(prompt("Nhập số điện"))
+    let tiendien
+    if (sodien<= 50) {
+        tiendien = sodien * 3
+        alert("tiền điện phải trả là: " + tiendien + "K VND")
+    } else if (sodien <= 200) {
+        tiendien = 50*3+(sodien-50)*4
+        alert("tiền điện phải trả là: " + tiendien + "K VND")
+    } else {
+        tiendien =50*3+ 150*4+ (sodien-200) * 5
+        alert("tiền điện phải trả là: " + tiendien + "K VND")
+    }
+</script>
+</body>
+</html>
