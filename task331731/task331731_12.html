@@ -6,5 +6,12 @@
 </head>
 <body>
 
-</body>
+<script>
+    let soThang = parseInt(prompt("Lãi suất hàng tháng= 0.7%\nNhập số tháng mà bạn muốn gửi ngân hàng!"));
+    let soTiengui = parseInt(prompt("Lãi suất hàng tháng= 0.7%\nNhập số tiền mà bạn muốn gửi ngân hàng!"));
+    let laisuat = 0.7 / 100;
+    let soTiennhan=soTiengui*Math.pow((1+laisuat),soThang)
+    alert("Số tiền bạn đã gửi là: "+soTiengui+"VND\nVậy cả lãi + gốc bạn sẽ nhận được sau "+soThang+" tháng là:" + soTiennhan + "VND")
+</script>
+</body>"
 </html>
