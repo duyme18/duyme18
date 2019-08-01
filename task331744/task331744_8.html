@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h1 style="text-align: center;color: red"> Hãy Đoán Thử Xem </h1>
+<center>
+    <input style="color:blue" type="button" value="Play Game" onclick="playGame()">
+</center>
+<script>
+    function playGame() {
+        let khoang1 = parseInt(prompt("Input begin number!"));
+        let khoang2 = parseInt(prompt("Input end number!"));
+        let a = parseInt(prompt("Enter your number (" + khoang1 + " - " + khoang2 + ")"));
+        let r = Math.floor((Math.random() * khoang2) + khoang1);
+        while (a != r) {
+            alert("You lose. Result = " + r)
+            a = parseInt(prompt("Enter your number (" + khoang1 + " - " + khoang2 + ")"));
+            r = Math.floor((Math.random() * khoang2) + khoang1);
+        }
+        alert("Congratulations. You win. Result = " + r)
+    }
+</script>
 </body>
 </html>
