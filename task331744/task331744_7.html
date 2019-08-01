@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<SCRIPT>
+    for (let i = 1; i <= 100; i++) {
+        while (i % 3 == 0) {
+            document.write(" Fizz ");
+            break;
+        }
+        while (i % 5 == 0) {
+            document.write(" Buzz ");
+            break;
+        }
+        while (i % 3 == 0 && i % 5 == 0) {
+            document.write(" FizzBuzz ");
+            break;
+        }
+        while (i % 3 != 0 && i % 5 != 0) {
+            document.write(" " + i + " ");
+            break;
+        }
+    }
+</SCRIPT>
 </body>
 </html>

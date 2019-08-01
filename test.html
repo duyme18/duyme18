@@ -1,10 +1,94 @@
 <!DOCTYPE html>
+<!--suppress ALL -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>all-primes</title>
 </head>
 <body>
-$END$
+<!--<form>
+    <table>
+        Choose jod do you want:
+        <br>
+        <tr>
+            <select id="choose">
+                <option value="check">Check a number is a prime?</option>
+                <option value="amount">Show amount of first primes.</option>
+            </select>
+        </tr>
+        <tr>
+            <td><b>Insert your number: </b></td>
+        </tr>
+        <tr>
+            <td><input id= "num" type="number"></td>
+            <td>
+                <input type = "button" onclick = "chonbuadi();" value = "IMPLEMENT">
+            </td>
+        </tr>
+    </table>
+    <br>
+    Result:
+    <output id="output"></output>
+</form>
+<script>
+    function chonbuadi(){
+        let c = document.getElementById("choose")[document.getElementById("choose").selectedIndex];
+        c = c.value;
+        let num = document.getElementById("num");
+        num = parseInt(num.value);
+        let rep ="";
+        switch (c){
+            case "check":
+                let result = prime(num);
+                alert(result);
+                if (result == true){
+                    rep += + num + "is a prime";
+                    break;
+                }else {
+                    rep += + num + " is NOT a prime";
+                    break;
+                }
+            case "amount":
+                let count = 0;
+                let i = 0;
+                while (count < num){
+                    let result = prime(i);
+                    if (result == true){
+                        document.write("<br />");
+                        document.write(i);
+                        count++;
+                    }
+                    i++;
+                }
+        }
+        document.getElementById("output").innerHTML = rep;
+    }
+    function prime(n){
+        // Biến cờ hiệu
+        let flag = true;
+        // Nếu n bé hơn 2 tức là không phải số nguyên tố
+        if (n < 2){
+            flag = false;
+        }
+        else{
+            // lặp từ 2 tới n-1
+            for (var i = 2; i < n-1; i++)
+            {
+                if (n % i == 0){
+                    flag = false;
+                    break;
+                }
+            }
+        }
+        return flag;
+    }
+</script>---!>
+<script>
+    let total = 0;
+    for (let i = 0; i < 10; i++) {
+        total = total + i
+
+    }alert("toal: " + total)
+</script>
 </body>
 </html>

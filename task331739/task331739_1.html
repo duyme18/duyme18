@@ -6,13 +6,16 @@
 </head>
 <body>
 <script>
-    let num = prompt("Enter a number");
+    let num;
+
     let total = 0;
-    while (num != -1) {
-        num = parseInt(prompt("enter a number"));
-        console.log(num);
-        total += num;
-    }
+   do{
+       num = parseInt(prompt("enter a number"));
+       console.log(num);
+       total += num;
+   } while (num != -1)
+
+
     console.log(total);
 </script>
 </body>

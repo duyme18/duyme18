@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let num = 20
+    let x = 1;
+    let y = 0;
+    let temp;
+    let total = 0;
+    while (num > 0) {
+        temp = x;
+        x += y;
+        y = temp;
+        num--;
+        total = total + y;
+    }
+    document.write(total);
+</script>
 </body>
 </html>

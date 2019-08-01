@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let num = 20
+    let x = 1;
+    let y = 0;
+    let temp;
+    while (num > 0) {
+        temp = x;
+        x += y;
+        y = temp;
+        num--;
+        if(y%5==0){
+            document.write(y + " ");
+            break;
+        }
+
+    }
+</script>
 </body>
 </html>

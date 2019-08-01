@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let getNumber = parseInt(prompt("Nhập nhiệt độ hiện tại"))
+    while (getNumber > 100) {
+        alert("Hãy giảm nhiệt độ");
+        break;
+    }
+    while (getNumber < 20) {
+        alert("Hãy tăng nhiệt độ")
+        break;
+    }
+    while (getNumber <= 100 && getNumber >= 20) {
+        alert("Nhiệt độ ổn định");
+        break;
+    }
+</script>
 </body>
 </html>
