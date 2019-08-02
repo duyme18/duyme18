@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Toán</title>
+    <h1 style="text-align: center;"> ỨNG DỤNG TÍNH TOÁN </h1>
+    <style>
+        form {
+            width: 186px;
+            margin: auto;
+        }
+        table {
+            border: 3px solid black;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <table><!-bảng->
+        <tr><!-cột->
+            <td colspan="5"><input id="result" type="text"></td>
+            <!-hàng->
+        </tr>
+        <tr>
+            <td style="text-align: center"><input type="button" value="7" onclick="result.value+=this.value"></td>
+            <td style="text-align: center"><input type="button" value="8" onclick="result.value+=this.value"></td>
+            <td style="text-align: center"><input type="button" value="9" onclick="result.value+=this.value"></td>
+            <td style="text-align: center"><input type="button" value="+" onclick="result.value+=this.value"></td>
+
+        </tr>
+        <tr>
+            <td style="text-align: center"><input type="button" value="4" onclick="result.value+=this.value"></td>
+            <td style="text-align: center"><input type="button" value="5" onclick="result.value+=this.value"></td>
+            <td style="text-align: center"><input type="button" value="6" onclick="result.value+=this.value"></td>
+            <td style="text-align: center"><input type="button" value="-" onclick="result.value+=this.value"></td>
+        </tr>
+
+        <tr>
+            <td style="text-align: center"><input type="button" value="1" onclick="result.value+=this.value"></td>
+            <td style="text-align: center"><input type="button" value="2" onclick="result.value+=this.value"></td>
+            <td style="text-align: center"><input type="button" value="3" onclick="result.value+=this.value"></td>
+            <td style="text-align: center"><input type="button" value="*" onclick="result.value+=this.value"></td>
+        </tr>
+        <tr>
+            <td style="text-align: center"><input type="button" value="C" onclick="clearDisplay()"></td>
+            <td style="text-align: center"><input type="button" value="0" onclick="result.value+=this.value"></td>
+            <td style="text-align: center"><input type="button" value="=" onclick="result.value=eval(result.value)">
+            </td>
+            <td style="text-align: center"><input type="button" value="/" onclick="result.value+=this.value"></td>
+        </tr>
+    </table>
+
+</form>
+<button onclick="this.innerHTML=Date()">The time is?</button>
+<script>
+    function clearDisplay() {
+        let mydisplay = document.getElementById("result")
+        mydisplay.value = ""
+    }
+</script>
+</body>
+</html>
