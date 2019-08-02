@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<img id="duy" src="anh1.jpg" style="position:absolute;left:0; top:0;" height="400" width="320"/>
+<script>
+    function upjmg() {
+        let element = document.getElementById("duy")
+        element.style.top = parseInt(element.style.top) - 5 + "px"
+    }
+    function downjmg() {
+        let element = document.getElementById("duy")
+        element.style.top = parseInt(element.style.top) + 5 + "px"
+    }
+    function leftjmg() {
+        let element = document.getElementById("duy")
+        element.style.left = parseInt(element.style.left) - 5 + "px"
+    }
+    function rightjmg() {
+        let element = document.getElementById("duy")
+        element.style.left = parseInt(element.style.left) + 5 + "px"
+    }
+    function movejmg(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                leftjmg()
+                break
+            case 39:
+                rightjmg()
+                break
+            case    38:
+                upjmg()
+                break
+            case 40:
+                downjmg()
+                break
+        }
+    }
+    function doreadly() {
+        window.addEventListener("keydown", movejmg)
+    }
+</script>
+
+<body onload="doreadly()">
+</body>
+</html>
