@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="search">
+<input type="button" value="Search" onclick="clicktoSearch()">
+<script>
+    function clicktoSearch() {
+        let check = false;
+        let english = ["blue", "yellow", "red", "black", "white"];
+        let vietnam = ["màu xanh", "màu vàng", "màu đỏ", "màu đen", "màu trắng"];
+        let nhap = document.getElementById("search").value;
+        for (let i = 0; i < english.length; i++) {
+            if (nhap == english[i]) {
+                document.write(vietnam[i]);
+                check = true;
+            }
+        }
+        if (check == false) {
+            document.write("Not found");
+        }
+    }
+</script>
+</body>
+</html>
