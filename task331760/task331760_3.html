@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [5, 6, 3, -1, 9, 10, 12, 4, 7, 8];
+    let total = 0;
+    let max = a[0];
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] > max) {
+            max = a[i];
+        }
+        total += a[i];
+    }
+    let averageTotal = total / a.length;
+    document.write("Số lớn nhất trong mảng là: " + max + "<br/>" + "Giá trị trung bình của mảng = " + averageTotal)
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt("Nhap chuỗi ký tự");
+    let chuoiKytu = [str[0]];
+    let vowels = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] == "a" || str[i] == "o" || str[i] == "i" ||
+            str[i] == "u" || str[i] == "e" || str[i] == "O" || str[i] == "A" ||
+            str[i] == "U" || str[i] == "E" || str[i] == "I") {
+            vowels++;
+        }
+    }
+    document.write("Chuỗi '" + str + "' có số nguyên âm là: " + vowels);
+    /* switch (str) {
+         case "a":
+             vowels += 1;
+         case "o":
+             vowels += 1;
+         case "i":
+             vowels += 1;
+         case "e":
+             vowels += 1;
+         case "u":
+             vowels += 1;
+             document.write("Chuỗi '" + str + "' có số nguyên âm là: " + vowels);
+             break;
+         default:
+             document.write("Khong co nguyen am")
+             break;
+
+     }*/
+</script>
+</body>
+</html>

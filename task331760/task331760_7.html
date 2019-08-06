@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let check = false;
+    let a = [];
+    for (let i = 0; i < 5; i++) {
+        a[i] = parseInt(prompt("Nhập phần tử thứ " + i));
+    }
+    let inputV = parseInt(prompt("Nhập vào số nguyên V:"));
+    for (let j = 0; j < a.length; j++) {
+        if (inputV == a[j]) {
+            alert(+inputV + " is in the Array ");
+            for (let k = j; k < a.length - 1; k++) {
+                a[k] = a[k + 1];
+            }
+            a[a.length - 1] = 0;
+            check = true;
+        }
+    }
+    alert("Mảng sau khi xóa phần tử " + inputV + " khỏi mảng: " + a);
+    if (check == false) {
+        alert("V is not in the Array");
+    }
+    console.log(a);
+</script>
+</body>
+</html>

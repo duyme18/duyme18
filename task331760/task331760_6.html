@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let check = false;
+    let a = [];
+    for (let i = 0; i < 10; i++) {
+        a[i] = parseInt(prompt("Nhập phần tử thứ " + i));
+    }
+    let inputV = parseInt(prompt("Nhập vào số nguyên V:"));
+    for (let j = 0; j < a.length; j++) {
+
+        if (inputV == a[j]) {
+            alert("V in the array")
+            check = true;
+        }
+    }
+    if (check == false) {
+        alert("V isnot in the array");
+    }
+</script>
+</body>
+</html>
