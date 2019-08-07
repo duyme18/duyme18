@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+
+    let input = parseInt(prompt("Nhập độ dài mảng"));
+    let count = 0;
+    let a = [];
+    for (let i = 0; i < input; i++) {
+        a[i] = prompt("Nhập kí tự thứ " + i);
+    }
+    for (let j = 0; j < a.length; j++) {
+        if (isNaN(a[j]) == false) {
+            count++;
+        }
+    }
+    document.write("Số ký tự số trong mảng là: " + count)
+</script>
 </body>
 </html>

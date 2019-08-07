@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let count = 0;
+    let str = prompt("Nhập chuỗi: ");
+    let result = [str[0]];
+    for (let j = 0; j < str.length; j++) {
+        if (isNaN(str[j]) == true) {
+            count++;
+        }
+    }
+    document.write("Số ký tự số từ mảng là: " + count)
+</script>
 </body>
 </html>

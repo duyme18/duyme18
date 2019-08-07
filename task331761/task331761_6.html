@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let input = parseInt(prompt("nhập số phần tử của mảng"));
+    let str = [];
+    for (let i = 0; i < input; i++) {
+        str[i] = prompt("phần tử thứ " + i);
+    }
+    for (let j = 0; j < str.length; j++) {
+        if (str[j] == "-") {
+            str[j] = "_";
+        }
+    }
+    let result = (str.join()).replace(/-/g, "_");
+    console.log(str);
+    console.log(result);
+</script>
 </body>
 </html>

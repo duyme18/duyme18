@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let count = 0;
+    let str1 = prompt("Nhập chuỗi A");
+    let rs1 = [str1[0]];
+    let str2 = prompt("Nhập chuỗi B")
+    let rs2 = [str2[0]];
+    if (str1.length != str2.length) {
+       alert('Hai chuỗi khác nhau');
+    } else {
+        for (let i = 0; i < str1.length; i++) {
+            if (str1[i] == str2[i]) {
+                count++;
+            }
+        }
+        if (count == str1.length) {
+           alert('Hai chuỗi giống nhau');
+        } else {
+            alert('Hai chuỗi khác nhau');
+        }
+    }
+</script>
 </body>
 </html>
