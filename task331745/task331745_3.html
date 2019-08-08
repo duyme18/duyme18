@@ -2,9 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let i, j;
+    let str = "";
+    let str2 = "";
+    let str3 = "";
+    let str4 = "";
+
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j < i + 1; j++) {
+            str += "* ";
+        }
+        str += "<br>";
+    }
+    document.write(str + "<br>");
+
+    for (i = 0; i < 5; i++) {
+        for (j = 5; j > i; j--) {
+            str2 += "* ";
+        }
+        str2 += "<br>";
+    }
+    document.write(str2 + "<br>");
+
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j < 5 - i; j++) {
+            str3 += "&nbsp;&nbsp;&nbsp;";
+        }
+        for (j = 0; j < i + 1; j++) {
+            str3 += "* ";
+        }
+        str3 += "<br>";
+    }
+    document.write(str3 + "<br>");
+
+    for (i = 5; i > 0; i--) {
+        for (j = 0; j < 5 - i; j++) {
+            str4 += "&nbsp;&nbsp;&nbsp;";
+        }
+        for (j = 0; j < i; j++) {
+            str4 += "* ";
+        }
+        str4 += "<br>";
+    }
+    document.write(str4);
+
+    /*let num = 1;
+    while (num <= 5) {
+        for (i = 1; i <= 5 - num; i++) {
+            str5 += " "+"<br>";
+        }
+        for (j = 1; j <= num; j++) {
+            str5 += "* ";
+        }
+        num++;
+        str5+="<br>";
+    }
+    document.write(str5+"<br>");*/
+</script>
 </body>
 </html>

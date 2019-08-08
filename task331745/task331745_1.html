@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let num=parseInt(prompt("Nhập số lượng số Fibonaci bạn muốn in ra!"))
+    let x=1;
+    let y=0;
+    let temp;
+    while (num > 0) {
+        temp = x;
+        x += y;
+        y = temp;
+        num--;
+        document.write(y + " ")
+        }
+</script>
 </body>
 </html>
