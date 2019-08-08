@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function minNumber(a, b, c) {
+        let min = a;
+        if (a < b && a < c) {
+            min = a;
+        } else if (b < c) {
+            min = b;
+        } else {
+            min = c;
+        }
+        return min;
+    }
+
+    let a = parseInt(prompt("Nhập số thứ 1"));
+    let b = parseInt(prompt("Nhập số thứ 2"));
+    let c = parseInt(prompt("Nhập số thứ 3"));
+    let result = minNumber(a, b, c);
+    alert("Min= " + result);
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function factorial(num) {
+        let number = 1;
+        for (let i = 1; i <= num; i++) {
+            number *= i;
+        }
+        return number;
+    }
+
+    let input = parseInt(prompt("enter a number"));
+    alert(input + "!= " + factorial(input));
+</script>
+</body>
+</html>

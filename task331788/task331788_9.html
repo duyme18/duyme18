@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = parseInt(prompt("Nhập số lượng ký tự trong mảng"));
+    let str = [];
+    let count = 0;
+    for (let i = 1; i <= input; i++) {
+        str[i] = prompt("Ký tự thứ " + i);
+    }
+    let randomChar = prompt("Nhập 1 ký tự bất kì");
+
+    function checkChars(chars) {
+        for (let j = 0; j < str.length; j++) {
+            if (chars == str[j]) {
+                count++;
+            }
+        }
+        if (count == 0) {
+            return -1
+        } else {
+            return count;
+        }
+    }
+    alert(checkChars(randomChar));
+</script>
+</body>
+</html>
