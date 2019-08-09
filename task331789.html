@@ -66,12 +66,12 @@
 <body>
 
 <script>
-    let productArray = ["","Nokia","Iphone","Samsung"];
+    let productArray = ["", "Nokia", "Iphone", "Samsung"];
     let x = 3;
     let y = 0;
 
     function addProduct() {
-        productArray[x] = document.getElementById("textValue").value;
+        productArray[x + 1] = document.getElementById("textValue").value;
         x++;
         alert("Thêm thành công!");
         document.getElementById("textValue").value = "";
@@ -80,7 +80,7 @@
     function displayProduct() {
         let e = "";
         for (let i = 1; i < productArray.length; i++) {
-            e += i + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
+            e += (i) + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
                 "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
                 "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
                 "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + productArray[i] + "<br/>";
