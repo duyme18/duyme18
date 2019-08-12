@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [
+        [1, 2, 3, 4],
+        [1, 2, 3, 4],
+        [1, 2, 3, 4],
+        [1, 2, 3, 4],
+    ]
+    let newArray = [];
+    alert(createArray());
+
+    function createArray() {
+        for (let i = 0; i < a.length; i++) {
+            if (i % 2 != 0) {
+                a[i] = a[i].reverse();
+            }
+        }
+        return newArray.concat(a);
+    }
+</script>
+</body>
+</html>

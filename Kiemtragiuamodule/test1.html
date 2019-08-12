@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPrime(number) {
+        let check = true;
+        if (number < 2) {
+            check = false;
+        } else {
+            for (let i = 2; i < number - 1; i++) {
+                if (number % i == 0) {
+                    check = false;
+                    break;
+                }
+            }
+        }
+        return check;
+    }
+
+    let inputNember = parseInt(prompt("Nhập 1 số bất kì!"));
+    let result = isPrime(inputNember);
+    if (result == false) {
+        alert("false");
+    } else {
+        alert("true");
+    }
+</script>
+</body>
+</html>

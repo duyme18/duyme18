@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = parseInt(prompt("Nhập số lượng số nguyên trong mảng"));
+    let integerArray = [];
+    let newArray = [];
+    for (let i = 0; i < input; i++) {
+        integerArray[i] = parseInt(prompt("Nhập số nguyên thứ " + i))
+    }
+    for (let j = 0; j < integerArray.length; j++) {
+        if (listPrime(integerArray[j])) {
+            newArray.push(integerArray[j]);
+        }
+    }
+    alert(newArray);
+
+    function listPrime(number) {
+        let check = true;
+        if (number < 2) {
+            check = false;
+        } else {
+            for (let i = 2; i < number - 1; i++) {
+                if (number % i == 0) {
+                    check = false;
+                    break;
+                }
+            }
+        }
+        return check;
+    }
+</script>
+</body>
+</html>
