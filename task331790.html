@@ -5,6 +5,24 @@
     <title>Title</title>
 </head>
 <body>
+<script>
 
+    let input = prompt("Nhập chuỗi");
+    let arr = input.split("");
+    alert(isPalindrome(arr));
+
+    function isPalindrome(str) {
+        if (str[0] == str[str.length - 1]) {
+            if (str.length == 0 || str.length == 1) {
+                return true;
+            }
+            str.pop();
+            str.shift();
+            return true && isPalindrome(str);
+        } else {
+            return false;
+        }
+    }
+</script>
 </body>
 </html>
