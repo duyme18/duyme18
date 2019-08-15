@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Rat = function () {
+        this.name = "";
+        this.weight = 0;
+        this.speed = 0;
+        this.status = true;
+        this.getName = function () {
+            return this.name;
+        };
+        this.setName = function (name) {
+            this.name = name;
+        };
+        this.getWeight = function () {
+            return this.weight;
+        };
+        this.setWeight = function (weight) {
+            this.weight = weight;
+        };
+        this.setSpeed = function (speed) {
+            this.speed = speed;
+        };
+        this.getSpeed = function () {
+            return this.speed;
+        };
+        this.say = function (say) {
+            console.log(say);
+        };
+        this.showStatus = function () {
+            if (this.status == true) {
+                console.log("Lêu Lêu!!!");
+                console.log("Weight: " + this.weight);
+                console.log("Living!");
+            } else {
+                this.weight = 0;
+                console.log("Weigh: " + this.weight);
+                console.log("Dead!");
+            }
+        }
+    };
+    let Cat = function () {
+        this.name = "";
+        this.weight = 0;
+        this.speed = 0;
+        this.status = true;
+        this.getName = function () {
+            return this.name;
+        };
+        this.setName = function (name) {
+            this.name = name;
+        };
+        this.getWeight = function () {
+            return this.weight;
+        };
+        this.setWeight = function (weight) {
+            this.weight = weight;
+        };
+
+        this.getSpeed = function () {
+            return this.speed;
+        };
+        this.setSpeed = function (speed) {
+            this.speed = speed;
+        };
+        this.say = function (say) {
+            console.log(say);
+        };
+        this.isCatched = function (mouse) {
+            if (this.speed > mouse.speed &&
+                mouse.status == true && this.weight > mouse.weight) {
+                return true;
+            }
+        };
+        this.eat = function (mouse) {
+            if (this.isCatched(mouse)) {
+                console.log("Hết đời nhé!");
+                mouse.status = false;
+                this.weight += mouse.weight;
+            } else {
+                console.log("Không thể bắt chuột vì nó quá trâu!");
+            }
+        }
+    };
+    let cat = new Cat();
+    let mouse = new Rat();
+    cat.setName("TOM");
+    mouse.setName("JERRY");
+    cat.setWeight(20);
+    cat.getWeight();
+    cat.setSpeed(20);
+    cat.getSpeed();
+    mouse.setWeight(45);
+    mouse.getWeight();
+    mouse.setSpeed(15);
+    mouse.getSpeed();
+    console.log(cat.getName());
+    console.log("Weight: " + cat.getWeight());
+    console.log("Speed: " + cat.getSpeed());
+    cat.say("Tao cắn mày");
+    cat.eat(mouse);
+    console.log(mouse.getName());
+    console.log("Weight: " + mouse.getWeight());
+    console.log("Speed: " + mouse.getSpeed());
+    console.log(cat.getName());
+    console.log("Weight: " + cat.getWeight());
+    console.log("Speed: " + cat.getSpeed());
+    console.log(mouse.getName());
+    mouse.showStatus();
+</script>
+</body>
+</html>
