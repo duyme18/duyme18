@@ -2,9 +2,165 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    // let Mobile = function () {
+    //     this.battery = 100;
+    //     this.name = "";
+    //     this.inbox = "";
+    //     this.outbox = "";
+    //     this.messagesent = "";
+    //     this.status = true;
+    //     this.isStatus = function () {
+    //         if (this.status) {
+    //             return true;
+    //         } else {
+    //             return false;
+    //         }
+    //     };
+    //
+    //     this.turnOnOff = function () {
+    //         if (this.isStatus()) {
+    //             status = false;
+    //         } else {
+    //             status = true;
+    //         }
+    //     };
+    //     this.change = function () {
+    //         if (this.battery < 20) {
+    //             alert("LOW BATTERY!!!");
+    //         }
+    //         this.battery += 1;
+    //         if (this.battery == 100) {
+    //             alert("THE BATTERY IS FULL!!!");
+    //         }
+    //     };
+    //     this.getMess = function () {
+    //         return this.messagesent;
+    //     }
+    //     this.createMessage = function () {
+    //         if (this.battery >= 0) {
+    //             let newMessage = prompt(this.name + "ENTER THE MESSAGE!");
+    //             this.messagesent = this.name + ": " + newMessage;
+    //             console.log(this.messagesent);
+    //         }
+    //     };
+    //     this.SendMessage = function (mobile) {
+    //         console.log("send: " + this.messagesent);
+    //         if (this.battery >= 0) {
+    //             this.outbox = this.messagesent;
+    //             mobile.inbox = this.outbox;
+    //             this.battery -= 1;
+    //
+    //         }
+    //     };
+    //     this.incomingMessage = function () {
+    //         if (this.battery >= 0) {
+    //             this.battery -= 1;
+    //         }
+    //     };
+    //     this.inboxMessage = function (m) {
+    //         this.messagesent = m;
+    //         console.log(this.messagesent);
+    //         // if (this.battery >= 0) {
+    //         //     console.log(this.messagesent);
+    //         //     this.battery -= 1;
+    //         //
+    //         // }
+    //     }
+    //     this.getBattery = function () {
+    //         return this.battery;
+    //     };
+    //     this.setBattery = function (battery) {
+    //         this.battery = battery;
+    //     };
+    //     this.getName = function () {
+    //         return this.name;
+    //     }
+    //     this.setName = function (name) {
+    //         this.name = name;
+    //     }
+    // };
+    //
+    // let iphone = new Mobile();
+    // let nokia = new Mobile();
+    // console.log(iphone.isStatus());
+    // iphone.setName("IPHONE");
+    // nokia.setName("NOKIA");
+    // console.log(iphone.getName());
+    // iphone.createMessage();
+    // console.log(iphone.getBattery());
+    // console.log(nokia.getName());
+    // nokia.inboxMessage(iphone.getMess());
+    // console.log(nokia.getBattery());
+    const ON = true;
+    const OFF = false;
+    let Mobile = function () {
+        this.battery = 100;
+        this.draft = [];
+        this.inbox = [];
+        this.sent = [];
+        this.isOn = OFF;
+        this.getStatus = function() {
+            return this.isOn == ON && this.battery > 0;
+        };
+        this.setPower = function() {
+            this.isOn = !this.isOn;
+        };
+        this.increaseBattery = function() {
+            if (this.battery < 100) {
+                this.battery++;
+            }
+        };
+        this.composeMessage = function (message) {
+            if (this.getStatus() == ON) {
+                this.draft.push(message);
+                this.decreaseBattery();
+            }
+        };
+
+        this.receiveMessage = function (message) {
+            if (this.getStatus() == ON) {
+                this.inbox.push(message);
+                this.decreaseBattery();
+            }
+        };
+        this.sendMessage = function (message, mobile) {
+            if (this.getStatus() == ON) {
+                this.sent.push(message);
+                this.decreaseBattery();
+                mobile.receiveMessage(message);
+            }
+        };
+        this.getInbox = function () {
+            if (this.getStatus() == ON) {
+                this.decreaseBattery();
+                return this.inbox;
+            }
+        };
+        this.getSent = function () {
+            if (this.getStatus() == ON) {
+                this.decreaseBattery();
+                return this.sent;
+            }
+        };
+        this.decreaseBattery = function () {
+            if (this.battery > 0) {
+                this.battery--;
+            } else {
+                this.isOn = OFF;
+            }
+        }
+    }
+    let nokia = new Mobile();
+    let iphone = new Mobile();
+    nokia.setPower();
+    iphone.setPower();
+    nokia.sendMessage("Hello", iphone);
+    let iPhoneMessages = iphone.getInbox();
+    console.log(iPhoneMessages);
+</script>
 </body>
 </html>
