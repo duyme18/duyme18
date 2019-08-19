@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let date = new Date(1996, 4, 30);
+    let dateNow = Date.now();
+    let time = dateNow - date;
+    console.log(Date.now());
+    console.log("Tôi đã sống: " + Math.round(time / 1000 / 60 / 60 / 24 / 365) + " năm");
+    console.log("Tôi đã sống: " + Math.floor(time / 1000 / 60 / 60 / 24 / 365 * 12) + " tháng");
+    console.log("Tôi đã sống: " + Math.floor(time / 1000 / 60 / 60 / 24) + " ngày");
+    console.log("Tôi đã sống: " + Math.floor(time / 1000 / 60 / 60) + " giờ");
+    console.log("Tôi đã sống: " + Math.floor(time / 1000 / 60) + " phút");
+    console.log("Tôi đã sống: " + time + " giây");
+    let random10 = Math.floor(Math.random() * 10 + 1);
+    console.log(random10);
+    let random400 = Math.floor(Math.random() * 400 + 1);
+    console.log(random400);
+    let random550 = Math.floor(Math.random() * 50 + 50);
+    console.log(random550);
+    console.log("MIN = " + Math.min(5, 7, 2, 9));
+    console.log(Math.pow(Math.min(5, 7, 2, 9), 53));
+    console.log("Circle Area= " + 5 * 5 * Math.PI);
+    let str = "Tôi yêu ngôn ngữ lập trình Javascript";
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === "n") {
+            count++;
+        }
+    };
+    console.log("Chuỗi trên có " + count + " ký tự n ");
+    let res = str.split(" ");
+    console.log(res);
+    let count1 = 0;
+    for (let i = 0; i < res.length; i++) {
+        count1++;
+    };
+    console.log("Chuỗi trên có " + count1 + " từ");
+    let newStr = str.replace("Javascript", "Typescript");
+    console.log(newStr);
+</script>
+</body>
+</html>
