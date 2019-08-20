@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <center>
+
+        <h1>ỨNG DỤNG QUẢN LÝ SẢN PHẨM</h1>
+
+        <input type="text" id="textValue">
+        <input type="button" value="ADD" onclick="addProduct();">
+        <input type="button" value="DISPLAY" onclick="displayProduct();">
+        <input type="button" value="EDIT" onclick="editProduct()">
+        <input type="button" value="DELETE" onclick="deleteProduct()">
+        <table>
+            <table style="width:40%">
+                <tr>
+                    <th>STT
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;
+                        SẢN PHẨM
+                    </th>
+
+                </tr>
+                <tr>
+                    <td>
+                        <div id="result"></div>
+                    </td>
+
+                </tr>
+            </table>
+        </table>
+
+    </center>
+</head>
+<style>
+
+    body
+    h1 {
+        color: blue;
+    }
+
+    p {
+        color: red;
+    }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 50%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<body>
+
+<script>
+    let productArray = ["", "Nokia", "Iphone", "Samsung", "Sony Xperia", "Oppo R1", "Xiaomi Mi 5s Plus"];
+    let x = 6;
+    let y = 0;
+
+    function addProduct() {
+        productArray[x + 1] = document.getElementById("textValue").value;
+        x++;
+        alert("Thêm thành công!");
+        document.getElementById("textValue").value = "";
+    }
+
+    function displayProduct() {
+        let e = "";
+        for (let i = 1; i < productArray.length; i++) {
+            e += (i) + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
+                "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
+                "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
+                "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + productArray[i] + "<br/>";
+        }
+        document.getElementById("result").innerHTML = e;
+    }
+
+    function editProduct() {
+        let selectProduct = parseInt(prompt("Nhập thứ tự số sản phẩm muốn sửa:"));
+        if (selectProduct < productArray.length) {
+            productArray[selectProduct] = prompt("Bạn muốn sửa tên sản phẩm thành: ");
+            productArray[y] = document.getElementById("textValue").value;
+            alert("Sửa thành công!")
+        } else {
+            alert("Sản phẩm không có trong danh sách!")
+        }
+    }
+
+    function deleteProduct() {
+        let selectProduct = parseInt(prompt("Nhập thứ tự số sản phẩm muốn xóa: "));
+        if (selectProduct < productArray.length) {
+            productArray.splice(selectProduct, 1);
+            alert("Xóa thành công!");
+        } else {
+            alert("Sản phẩm không có trong danh sách!")
+        }
+    }
+</script>
+</body>
+</html>
