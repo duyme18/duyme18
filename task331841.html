@@ -2,9 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let b = [];
+    let sample = randomArray(10);
+    findNdif(sample);
+    console.log(showMore(sample,b));
+    // Gọi mảng random
+    function randomArray(length) {
+        let arr = Array(length);
+        f(arr, function(element, index) { // element = vị trí của mảng arr, index là giá trị của mảng arr tương ứng
+            let value = Math.round(Math.random() * 101);
+            arr[index] = value;
+        });
+        return arr;
+    }
+
+    function f(arr, doSomething) {
+        let length = arr.length;
+        for (let i = 0; i < length; i++) {
+            doSomething(arr[i], i);
+        }
+    }
+
+    // Tìm phần tử phân biệt
+    function findNdif(arr) {
+        b.push(arr[0]);
+        for (let i = 1; i < arr.length; i++) {
+            let flag = 0;
+            for (let j = i - 1; j >= 0; j--) {
+                if (arr[i] === arr[j]) {
+                    flag = 1;
+                }
+            }
+            if (flag === 0) {
+                b.push(arr[i]);
+            }
+        }
+    }
+
+    // Tìm số lần xuất hiện
+    function showMore(arr1, arr2) {
+        for (let i = 0; i < arr2.length; i++) {
+            let count = 0;
+            for (let j = 0; j < arr1.length; j++) {
+                if (arr2[i] === arr1[j]){
+                    count++;
+                }
+            }
+            //console.log("Số " + arr2[i] + " xuất hiện " + count + " lần.")
+            if (count > 1) console.log("Số " + arr2[i] + " xuất hiện " + count + " lần.");
+        }
+    }
+
+</script>
 </body>
 </html>
