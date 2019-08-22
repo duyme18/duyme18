@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .cell {
+            width: 40px;
+            height: 40px;
+            border: solid 1px red;
+            text-align: center;
+            font-size: 20pt;
+            cursor: pointer;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+<center>
+
+    <h2><button onclick="Start()">Start</button> </h2>
+    <div id="display"></div>
+</center>
+<script>
+
+    let board = [];
+    let currentTurn = 'X';
+    const WINNER_COUNT = 5;
+    function start() {
+        for (let i = 0 ; i < 22; i++) {
+            board[i] = [];
+            for (let j = 0 ; j < 22; j++) {
+                board[i][j] = '';
+            }
+        }
+    }
+    function draw() {
+        let output = '<table>';
+        for (let i = 1 ; i < board.length - 1; i++) {
+            output += '<tr>';
+            for (let j = 2 ; j < board[i].length; j++) {
+                output += '<td class="cell" onclick="clickCell(' + i + ', ' + j + ')">' +  board[i][j] + '</td>';
+            }
+            output += '</tr>';
+        }
+        output += '</table>';
+        document.getElementById("display").innerHTML = output;
+    }
+    function Start() {
+        start();
+        draw();
+    }
+    function clickCell(row, column) {
+        if(board[row][column]=="") {
+            board[row][column] = currentTurn;
+        } else {
+            switchTurn();
+            alert("Cell Not Empty");
+        }
+        checkWinner(row, column);
+        switchTurn();
+        draw();
+    }
+    function switchTurn() {
+        if (currentTurn === 'X') {
+            currentTurn = 'O';
+        } else {
+            currentTurn = 'X';
+        }
+    }
+    function checkWinner(row, column) {
+        checkRow(row, column);
+        checkColumn(row, column);
+        checkCross1(row, column);
+        checkCross2(row, column);
+    }
+    function checkColumn(row, column) {
+        let count = 1;
+        let count1 = 1;
+        let count2 = 1;
+        let currentColumn = column;
+        while (count < WINNER_COUNT) {
+            if (
+                board[row][column] === currentTurn
+                && board[row][column] === board[row][column-1]
+            ) {
+                count++;
+                count1++;
+                column--;
+            } else {
+                count = 1;
+                break;
+            }
+        }
+        column = currentColumn;
+        while (count < WINNER_COUNT) {
+            if (board[row][column] === currentTurn
+                && board[row][column] === board[row][column+1]
+            ) {
+                count++;
+                count2++;
+                column++;
+            } else {
+                count = 1;
+                break;
+            }
+        }
+        if (count == WINNER_COUNT || (count1 + count2) > WINNER_COUNT ) {
+            alert(currentTurn + ' is winner');
+        }
+    }
+    function checkRow(row, column) {
+        let count = 1;
+        let count1 = 1;
+        let count2 = 1;
+        let currentRow = row;
+        while (count < WINNER_COUNT) {
+            if (
+                board[row][column] === currentTurn
+                && board[row][column] === board[row-1][column]
+            ) {
+                count++;
+                count1++;
+                row--;
+            } else {
+                count = 1;
+                break;
+            }
+        }
+        row = currentRow;
+        while (count < WINNER_COUNT) {
+            if (board[row][column] === currentTurn
+                && board[row][column] === board[row+1][column]
+            ) {
+                count++;
+                count2++;
+                row++;
+            } else {
+                count = 1;
+                break;
+            }
+        }
+        if (count == WINNER_COUNT || (count1 + count2) > WINNER_COUNT ) {
+            alert(currentTurn + ' is winner');
+        }
+    }
+    function checkCross1(row, column) {
+        let count = 1;
+        let count1 = 1;
+        let count2 = 1;
+        let currentRow = row;
+        let currenColumn = column;
+        while (count < WINNER_COUNT) {
+            if (
+                board[row][column] === currentTurn
+                && board[row][column] === board[row-1][column-1]
+            ) {
+                count++;
+                count1++;
+                row--;
+                column--;
+            } else {
+                count = 1;
+                break;
+            }
+        }
+        row = currentRow;
+        column = currenColumn;
+        while (count < WINNER_COUNT) {
+            if (board[row][column] === currentTurn
+                && board[row][column] === board[row+1][column+1]
+            ) {
+                count++;
+                count2++;
+                row++;
+                column++;
+            } else {
+                count = 1;
+                break;
+            }
+        }
+        if (count == WINNER_COUNT || (count1 + count2) > WINNER_COUNT ) {
+            alert(currentTurn + ' is winner');
+        }
+    }
+    function checkCross2 (row, column) {
+        let count = 1;
+        let count1 = 1;
+        let count2 = 1;
+        let currentRow = row;
+        let currenColumn = column;
+        while (count < WINNER_COUNT) {
+            if (
+                board[row][column] === currentTurn
+                && board[row][column] === board[row+1][column-1]
+            ) {
+                count++;
+                count1++;
+                row++;
+                column--;
+            } else {
+                count = 1;
+                break;
+            }
+        }
+        row = currentRow;
+        column = currenColumn;
+        while (count < WINNER_COUNT) {
+            if (board[row][column] === currentTurn
+                && board[row][column] === board[row-1][column+1]
+            ) {
+                count++;
+                count2++;
+                row--;
+                column++;
+            } else {
+                count = 1;
+                break;
+            }
+        }
+        if (count == WINNER_COUNT || (count1 + count2) > WINNER_COUNT ) {
+            alert(currentTurn + ' is winner');
+        }
+    }
+</script>
+</body>
+
+</html>
