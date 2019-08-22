@@ -2,9 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    const ON = true;
+    const OFF = false;
+    let ElectricLamp = function () {
+        this.status = OFF;
+        this.turnOn = function () {
+            this.status = ON;
+        };
+        this.turnOff = function () {
+            this.status = OFF;
+        };
+        // this.showStatus = function () {
+        //     if (this.status) {
+        //         console.log("The lamp is on!");
+        //     } else {
+        //         console.log("The lamp is off!");
+        //     }
+        // }
+    };
+    let SwitchButton =   function () {
+        this.status = OFF;
+        this.connectToLamp = function (electriclamp) {
+            this.electriclamp = electriclamp;
+        };
+        this.switchOn = function () {
+            this.electriclamp.turnOn();
+        };
+        this.switchOff = function () {
+            this.electriclamp.turnOff();
+        };
+    };
+    let lamp = new ElectricLamp();
+    let sw = new SwitchButton();
+    sw.connectToLamp(lamp);
+    for (let i = 0; i < 10; i++) {
+       console.log("Turn ON");
+       sw.switchOn();
+       console.log("Turn OFF");
+       sw.switchOff();
+    }
+</script>
 </body>
 </html>
