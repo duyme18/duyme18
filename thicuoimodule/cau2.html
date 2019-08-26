@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var arr = [12, 6, 3, 7, 21, 5, 7];
+		var input = parseInt(prompt('Nhập số nguyên bất kỳ'));
+		var newArr=[];
+		function tryRemoveFromArray(){
+			for(var i = 0; i < arr.length; i ++){
+				if(input==arr[i]){
+					arr.splice(i,1);
+				}
+			}
+		}
+		tryRemoveFromArray();
+		console.log(arr);
+	</script>
+</body>
+</html>

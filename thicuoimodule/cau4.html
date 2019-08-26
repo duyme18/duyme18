@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		canvas{
+			border: 1px solid #000000
+		}
+	</style>
+</head>
+<body>
+	<canvas id="myCanvas" width="500" height="500"></canvas>
+</body>
+<script type="text/javascript">
+	
+	function Rectangle(x, y, width, height, color){
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.height = height;
+		this.color = color;
+		this.render = function(){
+			var canvas = document.getElementById('myCanvas');
+			var context = canvas.getContext('2d');
+			context.rect(this.x, this.y, this.width, this.height);
+			context.fillStyle = this.color;
+			context.fill();
+		}
+	}
+	var rectangle = new Rectangle(10, 10, 200, 100, '#000000');
+	rectangle.render();
+</script>
+</html>
