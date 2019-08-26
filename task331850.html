@@ -2,9 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    const LENGTH = 5;
+
+    let guessNum = 96;
+    let newArr = randomArr(LENGTH);
+    console.log(newArr.join(" - "));
+    console.log(seqSearch(newArr, guessNum));                       // Gọi hàm tìm kiếm tuyến tính
+
+    //winNumber(newArr,LENGTH);
+
+    // Gọi mảng random
+    function randomArr(length) {                                    // Tạo function nhận thông số chiều dài mà mảng sẽ chứa
+        let bigArray = Array(length);                               // Khởi tạo mảng với chiều dài n (đây giá trị n là biến length)
+        creatArr(bigArray, function (infoArr, positionArr) {        // Gọi hàm set giá trị cho từng vị trí trong mảng, hàm sẽ nhận 1 giá trị là mảng lớn truyền vào, và 1 giá trị là dạng function
+            let value = Math.floor(Math.random() * 99);
+            bigArray[positionArr] = value;
+        });
+        return bigArray;
+    }
+
+    // Gọi giá trị random trong mảng random đã tạo
+    function winNumber(arr, length) {
+        let posArr = Math.floor(Math.random() * (length - 1));
+        let value = 0;
+        creatArr(arr, function (infoArr, positionArr) {
+            value = arr[posArr];
+        });
+        return value;
+    }
+
+    // Tạo mảng
+    function creatArr(arr, setvalue) {
+        let length = arr.length;
+        for (let i = 0; i < arr.length; i++) {
+            setvalue(arr[i], i);
+        }
+    }
+
+    // Tìm kiếm tuyến tính
+    function seqSearch(arr, guessNum) {
+        let flag = "You Lose !";
+        creatArr(arr, function (infoArr, positionArr) {
+            if (guessNum === infoArr) {
+                flag = "You Win !!!";
+            }
+        });
+        return flag;
+    }
+    function binarySearch() {
+        regexp=/^/
+    }
+</script>
 </body>
 </html>
